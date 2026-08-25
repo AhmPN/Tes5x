@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Kelas X-7 - SMAN 1 Pangkalan Lada</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
       --text-main: #1e293b;
       --text-muted: #64748b;
       --white: #ffffff;
-      --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
-      --radius: 14px;
+      --shadow-soft: spx 4px 12px rgba(0, 0, 0, 0.06);
+      --radius: 16px;
     }
     * {
       box-sizing: border-box;
@@ -24,16 +24,15 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
     body {
-      background-color: #f8fafc;
+      background-color: #f1f5f9;
       color: var(--text-main);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       width: 100%;
-      max-width: 100vw;
       overflow-x: hidden;
     }
-    /* Header HP */
+    /* Header */
     header {
       position: relative;
       width: 100%;
@@ -44,7 +43,7 @@
       align-items: center;
       text-align: center;
       color: var(--white);
-      padding: 20px 12px;
+      padding: 20px 16px;
       overflow: hidden;
     }
     .header-bg {
@@ -69,12 +68,12 @@
       position: relative;
       z-index: 3;
       width: 100%;
-      padding: 0 5px;
+      max-width: 450px;
     }
     header h1 {
       font-size: 1.25rem;
       font-weight: 700;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     header h2 {
@@ -88,93 +87,91 @@
       background: rgba(255, 255, 255, 0.15);
       padding: 3px 10px;
       border-radius: 50px;
-      font-size: 0.68rem;
+      font-size: 0.7rem;
       backdrop-filter: blur(4px);
     }
-    /* Navigasi Menu Model Geser Menyamping (Scrollable Horizontal) yang Pas di HP */
+    /* Navigasi Menu Grid 3 Kolom yang Pas dan Rapi di HP */
     .nav-container {
-      width: 100%;
-      margin: -15px auto 10px auto;
+      width: 94%;
+      max-width: 450px;
+      margin: -15px auto 12px auto;
       position: relative;
       z-index: 10;
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding: 4px 12px;
-      scrollbar-width: none;
-    }
-    .nav-container::-webkit-scrollbar {
-      display: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
     }
     .menu-btn {
-      flex: 0 0 auto;
       background: var(--white);
       color: var(--text-main);
       border: 1px solid #e2e8f0;
-      padding: 8px 12px;
-      border-radius: 10px;
+      padding: 10px 6px;
+      border-radius: 12px;
       font-weight: 600;
       font-size: 0.75rem;
       cursor: pointer;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 5px;
-      box-shadow: var(--shadow-soft);
+      justify-content: center;
+      gap: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       text-decoration: none;
-      white-space: nowrap;
+      text-align: center;
       transition: 0.2s;
     }
     .menu-btn i {
       color: var(--primary-color);
-      font-size: 0.85rem;
+      font-size: 1rem;
     }
-    .menu-btn:active {
+    .menu-btn:active, .menu-btn:hover {
       background-color: var(--primary-color);
       color: var(--white);
+      border-color: var(--primary-color);
     }
-    .menu-btn:active i {
+    .menu-btn:active i, .menu-btn:hover i {
       color: var(--white);
     }
-    /* Area Konten Utama Pas di Layar HP */
+    /* Area Konten Utama */
     main {
       flex: 1;
       width: 94%;
-      max-width: 500px;
+      max-width: 450px;
       margin: 0 auto 20px auto;
     }
     .card-content {
       background: var(--white);
-      padding: 16px 12px;
+      padding: 16px 14px;
       border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       border: 1px solid #e2e8f0;
       width: 100%;
     }
     .card-content h2 {
       color: var(--primary-color);
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       margin-bottom: 10px;
       padding-bottom: 6px;
       border-bottom: 2px solid #f1f5f9;
     }
     p {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
-    /* Tabel Responsif yang bisa digeser horizontal */
+    /* Tabel Responsif */
     .table-responsive {
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin-top: 6px;
+      margin-top: 8px;
       border-radius: 8px;
       border: 1px solid #e2e8f0;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       white-space: nowrap;
     }
     th, td {
@@ -193,7 +190,7 @@
       border-bottom: 1px solid #e2e8f0;
       color: var(--text-main);
     }
-    /* Galeri Grid HP (2 Kolom Pas) */
+    /* Galeri Grid (2 Kolom) */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -203,18 +200,18 @@
     .gallery-item {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
     }
     .gallery-item img {
       width: 100%;
-      height: 95px;
+      height: 100px;
       object-fit: cover;
       display: block;
     }
     .gallery-item p {
       padding: 5px;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       color: var(--text-main);
       text-align: center;
       font-weight: 500;
@@ -226,7 +223,7 @@
       text-align: center;
       padding: 16px 12px;
       margin-top: auto;
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       border-top: 1px solid #1e293b;
     }
     footer .social-links {
@@ -249,14 +246,14 @@
   <!-- Header -->
   <header>
     <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
-    <div class="header-overlay"></div>    
+    <div class="header-overlay"></div>
     <div class="header-content">
       <h1>SMAN 1 Pangkalan Lada</h1>
       <h2>Informasi Kelas X-7</h2>
       <div id="waktu">Memuat waktu...</div>
     </div>
   </header>
-  <!-- Navigasi Menu Menyamping -->
+  <!-- Navigasi Menu Grid 3x3 yang Rapi di HP -->
   <div class="nav-container">
     <button class="menu-btn" onclick="showContent('beranda')"><i class="fa-solid fa-house"></i> Beranda</button>
     <button class="menu-btn" onclick="showContent('struktur')"><i class="fa-solid fa-sitemap"></i> Struktur</button>
@@ -295,7 +292,7 @@
       let tahun = sekarang.getFullYear();
       let jam = String(sekarang.getHours()).padStart(2, '0');
       let menit = String(sekarang.getMinutes()).padStart(2, '0');
-      let detik = String(sekarang.getSeconds()).padStart(2, '0');      
+      let detik = String(sekarang.getSeconds()).padStart(2, '0');
       const elemenWaktu = document.getElementById("waktu");
       if(elemenWaktu) {
         elemenWaktu.innerHTML = `${hari}, ${tanggal} ${bulan} ${tahun} &bull; ${jam}:${menit}:${detik}`;
