@@ -17,14 +17,12 @@
       --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
       --radius: 14px;
     }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-
     body {
       background-color: #f8fafc;
       color: var(--text-main);
@@ -35,7 +33,6 @@
       max-width: 100vw;
       overflow-x: hidden;
     }
-
     /* Header HP */
     header {
       position: relative;
@@ -50,7 +47,6 @@
       padding: 20px 12px;
       overflow: hidden;
     }
-
     .header-bg {
       position: absolute;
       top: 0;
@@ -60,7 +56,6 @@
       object-fit: cover;
       z-index: 1;
     }
-
     .header-overlay {
       position: absolute;
       top: 0;
@@ -70,28 +65,24 @@
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 58, 138, 0.78) 100%);
       z-index: 2;
     }
-
     header .header-content {
       position: relative;
       z-index: 3;
       width: 100%;
       padding: 0 5px;
     }
-
     header h1 {
       font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 2px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-
     header h2 {
       font-size: 0.85rem;
       font-weight: 500;
       color: #93c5fd;
       margin-bottom: 8px;
     }
-
     #waktu {
       display: inline-block;
       background: rgba(255, 255, 255, 0.15);
@@ -100,7 +91,6 @@
       font-size: 0.68rem;
       backdrop-filter: blur(4px);
     }
-
     /* Navigasi Menu Model Geser Menyamping (Scrollable Horizontal) yang Pas di HP */
     .nav-container {
       width: 100%;
@@ -113,11 +103,9 @@
       padding: 4px 12px;
       scrollbar-width: none;
     }
-
     .nav-container::-webkit-scrollbar {
       display: none;
     }
-
     .menu-btn {
       flex: 0 0 auto;
       background: var(--white);
@@ -136,21 +124,17 @@
       white-space: nowrap;
       transition: 0.2s;
     }
-
     .menu-btn i {
       color: var(--primary-color);
       font-size: 0.85rem;
     }
-
     .menu-btn:active {
       background-color: var(--primary-color);
       color: var(--white);
     }
-
     .menu-btn:active i {
       color: var(--white);
     }
-
     /* Area Konten Utama Pas di Layar HP */
     main {
       flex: 1;
@@ -158,7 +142,6 @@
       max-width: 500px;
       margin: 0 auto 20px auto;
     }
-
     .card-content {
       background: var(--white);
       padding: 16px 12px;
@@ -167,7 +150,6 @@
       border: 1px solid #e2e8f0;
       width: 100%;
     }
-
     .card-content h2 {
       color: var(--primary-color);
       font-size: 1.05rem;
@@ -175,13 +157,11 @@
       padding-bottom: 6px;
       border-bottom: 2px solid #f1f5f9;
     }
-
     p {
       font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.45;
     }
-
     /* Tabel Responsif yang bisa digeser horizontal */
     .table-responsive {
       width: 100%;
@@ -191,34 +171,28 @@
       border-radius: 8px;
       border: 1px solid #e2e8f0;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.75rem;
       white-space: nowrap;
     }
-
     th, td {
       padding: 8px 10px;
       text-align: left;
     }
-
     th {
       background-color: var(--primary-color);
       color: var(--white);
       font-weight: 600;
     }
-
     tr:nth-child(even) {
       background-color: #f8fafc;
     }
-
     td {
       border-bottom: 1px solid #e2e8f0;
       color: var(--text-main);
     }
-
     /* Galeri Grid HP (2 Kolom Pas) */
     .gallery-grid {
       display: grid;
@@ -226,21 +200,18 @@
       gap: 8px;
       margin-top: 8px;
     }
-
     .gallery-item {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
       overflow: hidden;
     }
-
     .gallery-item img {
       width: 100%;
       height: 95px;
       object-fit: cover;
       display: block;
     }
-
     .gallery-item p {
       padding: 5px;
       font-size: 0.7rem;
@@ -248,7 +219,6 @@
       text-align: center;
       font-weight: 500;
     }
-
     /* Footer */
     footer {
       background-color: #0f172a;
@@ -259,14 +229,12 @@
       font-size: 0.72rem;
       border-top: 1px solid #1e293b;
     }
-
     footer .social-links {
       margin-top: 6px;
       display: flex;
       justify-content: center;
       gap: 14px;
     }
-
     footer a {
       color: var(--white);
       text-decoration: none;
@@ -278,19 +246,16 @@
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
-    <div class="header-overlay"></div>
-    
+    <div class="header-overlay"></div>    
     <div class="header-content">
       <h1>SMAN 1 Pangkalan Lada</h1>
       <h2>Informasi Kelas X-7</h2>
       <div id="waktu">Memuat waktu...</div>
     </div>
   </header>
-
   <!-- Navigasi Menu Menyamping -->
   <div class="nav-container">
     <button class="menu-btn" onclick="showContent('beranda')"><i class="fa-solid fa-house"></i> Beranda</button>
@@ -303,7 +268,6 @@
     <a href="https://aku-sehat.vercel.app/" target="_blank" class="menu-btn"><i class="fa-solid fa-list-check"></i> Jurnal</a>
     <button class="menu-btn" onclick="showContent('pesan')"><i class="fa-solid fa-envelope"></i> Pesan</button>
   </div>
-
   <!-- Konten Utama -->
   <main>
     <div id="content" class="card-content">
@@ -311,7 +275,6 @@
       <p>Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat dan rapi.</p>
     </div>
   </main>
-
   <!-- Footer -->
   <footer>
     <p>Hak Cipta &copy; 2026 Kelas X-7 | SMAN 1 Pangkalan Lada</p>
@@ -320,7 +283,6 @@
       <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
     </div>
   </footer>
-
   <!-- Script -->
   <script>
     function updateWaktu() {
@@ -333,8 +295,7 @@
       let tahun = sekarang.getFullYear();
       let jam = String(sekarang.getHours()).padStart(2, '0');
       let menit = String(sekarang.getMinutes()).padStart(2, '0');
-      let detik = String(sekarang.getSeconds()).padStart(2, '0');
-      
+      let detik = String(sekarang.getSeconds()).padStart(2, '0');      
       const elemenWaktu = document.getElementById("waktu");
       if(elemenWaktu) {
         elemenWaktu.innerHTML = `${hari}, ${tanggal} ${bulan} ${tahun} &bull; ${jam}:${menit}:${detik}`;
@@ -342,7 +303,6 @@
     }
     setInterval(updateWaktu, 1000);
     updateWaktu();
-
     const contentData = {
       beranda: `
         <h2>Selamat Datang di Website Kelas X-7!</h2>
@@ -497,21 +457,17 @@
         </div>
       `
     };
-
     function showContent(menu) {
       const container = document.getElementById("content");
       container.innerHTML = contentData[menu] || "<p>Halaman tidak ditemukan.</p>";
     }
-
     function kirimKeWhatsApp() {
       const nama = document.getElementById('wa-nama').value.trim();
       const pesan = document.getElementById('wa-pesan').value.trim();
-
       if (!nama || !pesan) {
         alert('Mohon isi Nama dan Pesan terlebih dahulu!');
         return;
       }
-
       const nomorWa = '6285824522033';
       const teksFormat = `Halo Admin Kelas X-7,%0A%0A*Nama Pengirim:* ${encodeURIComponent(nama)}%0A*Pesan:* ${encodeURIComponent(pesan)}`;
       window.open(`https://wa.me/${nomorWa}?text=${teksFormat}`, '_blank');
