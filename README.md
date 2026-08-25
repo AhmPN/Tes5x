@@ -245,7 +245,7 @@
 <body>
   <!-- Header -->
   <header>
-    <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
+    <img src="senamf.JPG" alt="Background Sekolah" class="header-bg">
     <div class="header-overlay"></div>
     <div class="header-content">
       <h1>SMAN 1 Pangkalan Lada</h1>
