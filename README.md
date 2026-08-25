@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Website Kelas X 7 - SMAN 1 Pangkalan Lada</title>
+  <title>Website Kelas X-7 - SMAN 1 Pangkalan Lada</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +14,7 @@
       --text-main: #1e293b;
       --text-muted: #64748b;
       --white: #ffffff;
-      --shadow-soft: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+      --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.06);
       --radius: 16px;
     }
     * {
@@ -24,26 +24,25 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
     body {
-      background-color: #f8fafc;
+      background-color: #f1f5f9;
       color: var(--text-main);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      width: 100%;
       overflow-x: hidden;
     }
-    /* Header Responsif */
+    /* Header */
     header {
       position: relative;
       width: 100%;
-      min-height: 240px;
+      min-height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: var(--white);
-      padding: 30px 16px;
+      padding: 25px 16px;
       overflow: hidden;
     }
     .header-bg {
@@ -61,7 +60,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.8) 100%);
       z-index: 2;
     }
     header .header-content {
@@ -69,108 +68,113 @@
       z-index: 3;
       width: 100%;
       max-width: 600px;
-      padding: 0 10px;
     }
     header h1 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     header h2 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: #93c5fd;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     #waktu {
       display: inline-block;
       background: rgba(255, 255, 255, 0.15);
-      padding: 5px 12px;
+      padding: 4px 10px;
       border-radius: 50px;
-      font-size: 0.75rem;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.72rem;
+      backdrop-filter: blur(4px);
     }
-    /* Navigasi Mengambang (Grid HP) */
+    /* Navigasi Menu Model Geser Menyamping (Scrollable Horizontal) agar tidak menumpuk & tertutup */
     .nav-container {
-      max-width: 700px;
-      width: 92%;
-      margin: -20px auto 15px auto;
+      width: 100%;
+      max-width: 800px;
+      margin: -20px auto 12px auto;
       position: relative;
       z-index: 10;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
       gap: 8px;
+      overflow-x: auto;
+      padding: 4px 16px;
+      scrollbar-width: none; /* Hilangkan scrollbar di Firefox */
+    }
+    .nav-container::-webkit-scrollbar {
+      display: none; /* Hilangkan scrollbar di Chrome/Safari */
     }
     .menu-btn {
+      flex: 0 0 auto;
       background: var(--white);
       color: var(--text-main);
       border: 1px solid #e2e8f0;
-      padding: 10px 8px;
+      padding: 10px 14px;
       border-radius: 12px;
       font-weight: 600;
       font-size: 0.8rem;
       cursor: pointer;
-      transition: all 0.2s ease;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 4px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-      text-align: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       text-decoration: none;
+      white-space: nowrap;
+      transition: 0.2s;
     }
     .menu-btn i {
       color: var(--primary-color);
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
-    .menu-btn:active {
+    .menu-btn:active, .menu-btn:hover {
       background-color: var(--primary-color);
       color: var(--white);
+      border-color: var(--primary-color);
     }
-    .menu-btn:active i {
+    .menu-btn:active i, .menu-btn:hover i {
       color: var(--white);
     }
     /* Area Konten Utama */
     main {
       flex: 1;
-      max-width: 700px;
       width: 92%;
-      margin: 0 auto 30px auto;
+      max-width: 800px;
+      margin: 0 auto 25px auto;
     }
     .card-content {
       background: var(--white);
-      padding: 20px 16px;
+      padding: 18px 14px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-soft);
-      border: 1px solid #f1f5f9;
+      border: 1px solid #e2e8f0;
       width: 100%;
     }
     .card-content h2 {
       color: var(--primary-color);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       margin-bottom: 12px;
       padding-bottom: 8px;
       border-bottom: 2px solid #f1f5f9;
     }
     p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.5;
     }
-    /* Tabel Responsif */
+    /* Tabel yang bisa digeser horizontal jika kepanjangan */
     .table-responsive {
       width: 100%;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin-top: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       white-space: nowrap;
     }
     th, td {
@@ -189,12 +193,12 @@
       border-bottom: 1px solid #e2e8f0;
       color: var(--text-main);
     }
-    /* Galeri Grid HP (2 Kolom) */
+    /* Galeri Grid HP (2 Kolom Rapi) */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 10px;
     }
     .gallery-item {
       background: #f8fafc;
@@ -222,14 +226,14 @@
       text-align: center;
       padding: 20px 16px;
       margin-top: auto;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       border-top: 1px solid #1e293b;
     }
     footer .social-links {
-      margin-top: 10px;
+      margin-top: 8px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 16px;
     }
     footer a {
       color: var(--white);
@@ -237,7 +241,7 @@
       font-weight: 500;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
   </style>
 </head>
@@ -245,14 +249,14 @@
   <!-- Header -->
   <header>
     <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
-    <div class="header-overlay"></div>   
+    <div class="header-overlay"></div>    
     <div class="header-content">
       <h1>SMAN 1 Pangkalan Lada</h1>
       <h2>Informasi Kelas X-7</h2>
       <div id="waktu">Memuat waktu...</div>
     </div>
   </header>
-  <!-- Navigasi (Grid 3 Kolom agar pas di HP) -->
+  <!-- Navigasi Menu Menyamping (Bisa digeser/scroll) -->
   <div class="nav-container">
     <button class="menu-btn" onclick="showContent('beranda')"><i class="fa-solid fa-house"></i> Beranda</button>
     <button class="menu-btn" onclick="showContent('struktur')"><i class="fa-solid fa-sitemap"></i> Struktur</button>
@@ -268,7 +272,7 @@
   <main>
     <div id="content" class="card-content">
       <h2>Selamat Datang di Website Kelas X-7!</h2>
-      <p>Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
+      <p>Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat dan rapi.</p>
     </div>
   </main>
   <!-- Footer -->
@@ -291,7 +295,7 @@
       let tahun = sekarang.getFullYear();
       let jam = String(sekarang.getHours()).padStart(2, '0');
       let menit = String(sekarang.getMinutes()).padStart(2, '0');
-      let detik = String(sekarang.getSeconds()).padStart(2, '0');      
+      let detik = String(sekarang.getSeconds()).padStart(2, '0');     
       const elemenWaktu = document.getElementById("waktu");
       if(elemenWaktu) {
         elemenWaktu.innerHTML = `${hari}, ${tanggal} ${bulan} ${tahun} &bull; ${jam}:${menit}:${detik}`;
@@ -460,7 +464,6 @@
     function kirimKeWhatsApp() {
       const nama = document.getElementById('wa-nama').value.trim();
       const pesan = document.getElementById('wa-pesan').value.trim();
-
       if (!nama || !pesan) {
         alert('Mohon isi Nama dan Pesan terlebih dahulu!');
         return;
