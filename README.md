@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Website Kelas X 7 - SMAN 1 Pangkalan Lada</title>
   <!-- Google Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
       --text-main: #1e293b;
       --text-muted: #64748b;
       --white: #ffffff;
-      --shadow-soft: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
-      --radius: 20px;
+      --shadow-soft: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+      --radius: 16px;
     }
     * {
       box-sizing: border-box;
@@ -29,13 +29,14 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      width: 100%;
       overflow-x: hidden;
     }
-    /* Header dengan Foto Latar Belakang */
+    /* Header Responsif */
     header {
       position: relative;
       width: 100%;
-      min-height: 280px;
+      min-height: 240px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -67,119 +68,110 @@
       position: relative;
       z-index: 3;
       width: 100%;
-      max-width: 800px;
+      max-width: 600px;
       padding: 0 10px;
     }
     header h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
       margin-bottom: 6px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     header h2 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
       color: #93c5fd;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
     #waktu {
       display: inline-block;
       background: rgba(255, 255, 255, 0.15);
-      padding: 6px 14px;
+      padding: 5px 12px;
       border-radius: 50px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    /* Navigasi Mengambang (Floating Menu) Responsif HP & PC */
+    /* Navigasi Mengambang (Grid HP) */
     .nav-container {
-      max-width: 950px;
+      max-width: 700px;
       width: 92%;
-      margin: -25px auto 15px auto;
+      margin: -20px auto 15px auto;
       position: relative;
       z-index: 10;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 8px;
     }
     .menu-btn {
       background: var(--white);
       color: var(--text-main);
       border: 1px solid #e2e8f0;
-      padding: 12px 10px;
+      padding: 10px 8px;
       border-radius: 12px;
       font-weight: 600;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.2s ease;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      gap: 4px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
       text-align: center;
       text-decoration: none;
     }
     .menu-btn i {
       color: var(--primary-color);
-      font-size: 0.9rem;
-      transition: transform 0.3s;
+      font-size: 1rem;
     }
-    .menu-btn:hover {
+    .menu-btn:active {
       background-color: var(--primary-color);
       color: var(--white);
-      border-color: var(--primary-color);
-      transform: translateY(-2px);
     }
-    .menu-btn:hover i {
+    .menu-btn:active i {
       color: var(--white);
-      transform: scale(1.1);
     }
     /* Area Konten Utama */
     main {
       flex: 1;
-      max-width: 950px;
+      max-width: 700px;
       width: 92%;
-      margin: 10px auto 30px auto;
+      margin: 0 auto 30px auto;
     }
     .card-content {
       background: var(--white);
       padding: 20px 16px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-soft);
-      animation: fadeIn 0.4s ease-in-out;
       border: 1px solid #f1f5f9;
-      overflow-x: auto;
-    }
-    @media (min-width: 768px) {
-      .card-content {
-        padding: 40px;
-      }
-      header {
-        min-height: 320px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      width: 100%;
     }
     .card-content h2 {
       color: var(--primary-color);
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      padding-bottom: 10px;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 2px solid #f1f5f9;
     }
-    /* Styling Tabel Responsif agar tidak terpotong di HP */
+    p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    /* Tabel Responsif */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 10px;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 15px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      white-space: nowrap;
     }
     th, td {
       padding: 10px 12px;
@@ -193,36 +185,32 @@
     tr:nth-child(even) {
       background-color: #f8fafc;
     }
-    tr:hover {
-      background-color: #f1f5f9;
-    }
     td {
       border-bottom: 1px solid #e2e8f0;
       color: var(--text-main);
     }
-    /* Galeri Grid Style (Responsif 2 kolom di HP, fleksibel di PC) */
+    /* Galeri Grid HP (2 Kolom) */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 12px;
-      margin-top: 15px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-top: 12px;
     }
     .gallery-item {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
     }
     .gallery-item img {
       width: 100%;
-      height: 130px;
+      height: 110px;
       object-fit: cover;
       display: block;
     }
     .gallery-item p {
-      padding: 8px;
-      font-size: 0.8rem;
+      padding: 6px;
+      font-size: 0.75rem;
       color: var(--text-main);
       text-align: center;
       font-weight: 500;
@@ -232,13 +220,13 @@
       background-color: #0f172a;
       color: #94a3b8;
       text-align: center;
-      padding: 25px 16px;
+      padding: 20px 16px;
       margin-top: auto;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       border-top: 1px solid #1e293b;
     }
     footer .social-links {
-      margin-top: 12px;
+      margin-top: 10px;
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -249,33 +237,29 @@
       font-weight: 500;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: color 0.2s;
-    }
-    footer a:hover {
-      color: #93c5fd;
+      gap: 5px;
     }
   </style>
 </head>
 <body>
-  <!-- Header dengan Foto Latar Belakang -->
+  <!-- Header -->
   <header>
-    <img src="fotox75.jpg" alt="Background Sekolah" class="header-bg">
-    <div class="header-overlay"></div>    
+    <img src="x75.jpg" alt="Background Sekolah" class="header-bg">
+    <div class="header-overlay"></div>   
     <div class="header-content">
       <h1>SMAN 1 Pangkalan Lada</h1>
       <h2>Informasi Kelas X-7</h2>
       <div id="waktu">Memuat waktu...</div>
     </div>
   </header>
-  <!-- Navigasi Mengambang (Floating Menu) Responsif -->
+  <!-- Navigasi (Grid 3 Kolom agar pas di HP) -->
   <div class="nav-container">
     <button class="menu-btn" onclick="showContent('beranda')"><i class="fa-solid fa-house"></i> Beranda</button>
     <button class="menu-btn" onclick="showContent('struktur')"><i class="fa-solid fa-sitemap"></i> Struktur</button>
     <button class="menu-btn" onclick="showContent('anggota')"><i class="fa-solid fa-users"></i> Anggota</button>
     <button class="menu-btn" onclick="showContent('pelajaran')"><i class="fa-solid fa-calendar-days"></i> Jadwal</button>
     <button class="menu-btn" onclick="showContent('piket')"><i class="fa-solid fa-broom"></i> Piket</button>
-    <button class="menu-btn" onclick="showContent('pr')"><i class="fa-solid fa-book"></i> Tugas PR</button>
+    <button class="menu-btn" onclick="showContent('pr')"><i class="fa-solid fa-book"></i> Tugas</button>
     <button class="menu-btn" onclick="showContent('galeri')"><i class="fa-solid fa-images"></i> Galeri</button>
     <a href="https://aku-sehat.vercel.app/" target="_blank" class="menu-btn"><i class="fa-solid fa-list-check"></i> Jurnal</a>
     <button class="menu-btn" onclick="showContent('pesan')"><i class="fa-solid fa-envelope"></i> Pesan</button>
@@ -284,7 +268,7 @@
   <main>
     <div id="content" class="card-content">
       <h2>Selamat Datang di Website Kelas X-7!</h2>
-      <p style="color: var(--text-muted); line-height: 1.6; margin-top: 10px; font-size: 0.95rem;">Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
+      <p>Website resmi kelas X-7 untuk mempermudah koordinasi, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
     </div>
   </main>
   <!-- Footer -->
@@ -295,9 +279,8 @@
       <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
     </div>
   </footer>
-  <!-- Script JavaScript -->
+  <!-- Script -->
   <script>
-    // Jam Realtime
     function updateWaktu() {
       const hariNama = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
       const bulanNama = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
@@ -316,15 +299,14 @@
     }
     setInterval(updateWaktu, 1000);
     updateWaktu();
-    // Data Konten Lengkap
     const contentData = {
       beranda: `
         <h2>Selamat Datang di Website Kelas X-7!</h2>
-        <p style="color: var(--text-muted); line-height: 1.6; margin-top: 10px; font-size: 0.95rem;">Website resmi kelas X-7 untuk mempermudah koordinasi akademik, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
+        <p>Website resmi kelas X-7 untuk mempermudah koordinasi akademik, melihat jadwal, serta berbagai informasi penting lainnya secara cepat, rapi, dan terpadu.</p>
       `,
       struktur: `
         <h2>Struktur Organisasi Kelas X-7</h2>
-        <div style="overflow-x: auto;">
+        <div class="table-responsive">
           <table>
             <tr><th>Jabatan</th><th>Nama Lengkap</th></tr>
             <tr><td>Wali Kelas</td><td>Arif Dedy Purwanto, S.Pd.</td></tr>
@@ -342,11 +324,11 @@
         </div>
       `,
       anggota: `
-        <h2>Daftar Anggota Siswa Kelas X-7 (35 Siswa)</h2>
-        <div style="overflow-x: auto;">
+        <h2>Daftar Anggota Siswa Kelas X-7</h2>
+        <div class="table-responsive">
           <table>
             <tr>
-              <th style="width: 50px; text-align: center;">No</th>
+              <th style="width: 40px; text-align: center;">No</th>
               <th>Nama Lengkap Siswa</th>
             </tr>
             <tr><td style="text-align: center;">1</td><td>ACHMAD NOOR HAFIID</td></tr>
@@ -389,7 +371,7 @@
       `,
       pelajaran: `
         <h2>Jadwal Pelajaran Kelas X-7</h2>
-        <div style="overflow-x: auto;">
+        <div class="table-responsive">
           <table>
             <tr><th>Hari</th><th>Mata Pelajaran</th></tr>
             <tr><td>Senin</td><td>MTK Wajib, Geografi, B.Indonesia, B.inggris</td></tr>
@@ -402,7 +384,7 @@
       `,
       piket: `
         <h2>Jadwal Piket Harian</h2>
-        <div style="overflow-x: auto;">
+        <div class="table-responsive">
           <table>
             <tr><th>Hari</th><th>Nama Petugas Piket</th></tr>
             <tr><td>Senin</td><td>Amanda, Sophy, Nayra, Rosa, Putra, Nain, Arjuna, Yoga</td></tr>
@@ -415,9 +397,9 @@
       `,
       pr: `
         <h2>Informasi Tugas & PR Terbaru</h2>
-        <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
-          <h4 style="color: var(--primary-color); margin-bottom: 5px; font-size: 0.95rem;">Pengumuman Tugas</h4>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Silakan cek secara berkala atau tanyakan langsung melalui kotak pesan jika ada tugas yang belum dimengerti.</p>
+        <div style="background: #f8fafc; border-left: 4px solid var(--primary-color); padding: 12px; border-radius: 8px;">
+          <h4 style="color: var(--primary-color); margin-bottom: 4px; font-size: 0.9rem;">Pengumuman Tugas</h4>
+          <p style="font-size: 0.85rem;">Silakan cek secara berkala atau tanyakan langsung melalui kotak pesan jika ada tugas yang belum dimengerti.</p>
         </div>
       `,
       galeri: `
@@ -442,39 +424,28 @@
         </div>
       `,
       pesan: `
-        <div style="max-width: 450px; margin: 0 auto; background: #efeae2; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: relative;">
-          <!-- Header WhatsApp -->
-          <div style="background: #005e54; color: white; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
-            <div style="position: relative;">
-              <div style="width: 38px; height: 38px; background: #128c7e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: white;">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <span style="position: absolute; bottom: 0; right: 0; width: 9px; height: 9px; background: #25d366; border: 2px solid #005e54; border-radius: 50%;"></span>
+        <div style="max-width: 100%; margin: 0 auto; background: #efeae2; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden;">
+          <div style="background: #005e54; color: white; padding: 10px 14px; display: flex; align-items: center; gap: 10px;">
+            <div style="width: 35px; height: 35px; background: #128c7e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+              <i class="fa-solid fa-user"></i>
             </div>
             <div>
-              <h4 style="margin: 0; font-size: 15px; font-weight: 600;">Admin Kelas X-7 (WA)</h4>
-              <span style="font-size: 11px; opacity: 0.8;">online</span>
+              <h4 style="margin: 0; font-size: 14px; font-weight: 600;">Admin Kelas X-7 (WA)</h4>
+              <span style="font-size: 10px; opacity: 0.8;">online</span>
             </div>
           </div>
-          <!-- Form Kirim WhatsApp -->
-          <div style="padding: 14px; display: flex; flex-direction: column; gap: 10px;">         
-            <!-- Bubble Chat: Input Nama -->
-            <div style="background: #ffffff; padding: 10px 14px; border-radius: 0 12px 12px 12px; max-width: 90%; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); align-self: flex-start;">
+          <div style="padding: 12px; display: flex; flex-direction: column; gap: 10px;">
+            <div style="background: #ffffff; padding: 10px; border-radius: 0 10px 10px 10px; box-shadow: 0 1px 0.5px rgba(0,0,0,0.1);">
               <label style="font-size: 11px; color: #005e54; font-weight: bold; display: block; margin-bottom: 2px;">Nama Kamu:</label>
-              <input type="text" id="wa-nama" required placeholder="Ketik nama di sini..." 
-                     style="width: 100%; border: none; outline: none; font-size: 14px; background: transparent; color: #333; box-sizing: border-box;">
+              <input type="text" id="wa-nama" placeholder="Ketik nama di sini..." style="width: 100%; border: none; outline: none; font-size: 13px; background: transparent;">
             </div>
-            <!-- Bubble Chat: Input Pesan -->
-            <div style="background: #ffffff; padding: 10px 14px; border-radius: 0 12px 12px 12px; max-width: 90%; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); align-self: flex-start; position: relative; width: 100%;">
+            <div style="background: #ffffff; padding: 10px; border-radius: 0 10px 10px 10px; box-shadow: 0 1px 0.5px rgba(0,0,0,0.1);">
               <label style="font-size: 11px; color: #005e54; font-weight: bold; display: block; margin-bottom: 2px;">Tulis Pesan / Tugas:</label>
-              <textarea id="wa-pesan" required placeholder="Pesan pengaduan, atau tanyakan tugas PR..." rows="3"
-                        style="width: 100%; border: none; outline: none; font-size: 14px; background: transparent; color: #333; resize: none; box-sizing: border-box;"></textarea>
+              <textarea id="wa-pesan" placeholder="Ketik pesan atau tanyakan tugas..." rows="3" style="width: 100%; border: none; outline: none; font-size: 13px; background: transparent; resize: none;"></textarea>
             </div>
-            <!-- Panel Tombol Kirim ala WhatsApp Input Bar -->
-            <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; background: #f0f2f5; padding: 6px 10px; border-radius: 24px; position: relative;">
-              <div style="flex-grow: 1; font-size: 12px; color: #667781; overflow: hidden; white-space: nowrap; textile: ellipsis;">Kirim ke WhatsApp</div>          
-              <button type="button" onclick="kirimKeWhatsApp()"
-                      style="background: #00a884; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+            <div style="display: flex; align-items: center; gap: 8px; background: #f0f2f5; padding: 6px 10px; border-radius: 20px;">
+              <div style="flex-grow: 1; font-size: 11px; color: #667781;">Kirim ke WhatsApp</div>
+              <button type="button" onclick="kirimKeWhatsApp()" style="background: #00a884; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 14px;">
                 <i class="fa-solid fa-paper-plane"></i>
               </button>
             </div>
@@ -486,21 +457,17 @@
       const container = document.getElementById("content");
       container.innerHTML = contentData[menu] || "<p>Halaman tidak ditemukan.</p>";
     }
-    // Fungsi untuk mengarahkan data ke WhatsApp
     function kirimKeWhatsApp() {
       const nama = document.getElementById('wa-nama').value.trim();
       const pesan = document.getElementById('wa-pesan').value.trim();
+
       if (!nama || !pesan) {
         alert('Mohon isi Nama dan Pesan terlebih dahulu!');
         return;
       }
-      // Nomor WhatsApp tujuan
       const nomorWa = '6285824522033';
-      // Format teks pesan
       const teksFormat = `Halo Admin Kelas X-7,%0A%0A*Nama Pengirim:* ${encodeURIComponent(nama)}%0A*Pesan:* ${encodeURIComponent(pesan)}`;
-      // Membuka URL WhatsApp
-      const urlWa = `https://wa.me/${nomorWa}?text=${teksFormat}`;
-      window.open(urlWa, '_blank');
+      window.open(`https://wa.me/${nomorWa}?text=${teksFormat}`, '_blank');
     }
   </script>
 </body>
